@@ -15,7 +15,7 @@
      community.kubernetes.k8s:
        api_version: v1
        kind: Namespace
-       name: myapp
+       name: myapp_2
        state: present
      register: k8
              
