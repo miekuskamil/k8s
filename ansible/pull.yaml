@@ -5,7 +5,7 @@
   tasks:
 
    - name: test
-     shell: ls -la
+     shell: ls -la && pwd
      register: output
      
    - debug:
