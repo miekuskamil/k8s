@@ -1,16 +1,27 @@
 - name: test
   hosts: all
+  connection: local
   vars:
     ansible_python_interpreter: "/usr/bin/env python3"
   tasks:
 
+
    - name: test
-     shell: |
-             git clone https://github.com/miekuskamil/k8s.git
-             pwd
-             ls -la
-             git diff --name-only HEAD
-     register: output
+     shell: ansible-galaxy collection install community.kubernetes \n
+     register: test
      
+     
+   - name: Ensure the myapp Namespace exists.
+     community.kubernetes.k8s:
+       api_version: v1
+       kind: Namespace
+       name: myapp
+       state: present
+     register: k8
+             
+
    - debug:
-       var: output
+       var: test
+      
+   - debug:
+       var: k8
