@@ -5,4 +5,8 @@
   tasks:
 
    - name: test
-     shell: ls -la 
+     shell: ls -la
+     register: output
+     
+   - debug:
+       var: output
