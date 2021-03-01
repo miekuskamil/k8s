@@ -9,7 +9,7 @@
              git clone https://github.com/miekuskamil/k8s.git
              pwd
              ls -la
-             #cat $(git diff --name-only HEAD HEAD~1)
+             git diff --name-only HEAD HEAD~1
      register: output
      
    - debug:
