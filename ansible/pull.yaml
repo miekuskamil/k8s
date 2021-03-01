@@ -7,7 +7,7 @@
 
 
    - name: test
-     shell: ansible-galaxy collection install community.kubernetes \n
+     shell: ansible-galaxy collection install community.kubernetes
      register: test
      
      
